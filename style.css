@@ -1,6 +1,8 @@
 /* ================================
    RESET BÁSICO E CONFIGURAÇÕES GERAIS
 ================================= */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -67,44 +69,154 @@ body {
     background: var(--cor-hover);
 }
 
-/* ================================
-   SEÇÃO 3 - SERVIÇOS
-================================= */
-.servicos {
-    text-align: center;
-    padding: 80px 10%;
+/* ==============================
+   NOVA SESSÃO DE SERVIÇOS
+============================== */
+
+#servicos {
+  background-image: url("Dados/SITE-RCN.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.servicos h2 {
-    color: var(--cor-primaria);
-    margin-bottom: 40px;
-}
-
-.cards {
+.servicos-landing {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 120px 20px;
+    min-height: 600px; /* para garantir espaço suficiente */
+}
+
+
+/* === CARDS AGORA MAIORES === */
+.servico-card {
+    width: 380px;                /* era 320px */
+    padding: 40px 35px;          /* espaçamento interno maior */
+    border-radius: 18px;
+    background: #fffefb;
+    font-family: 'Pangolin', cursive;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+}
+
+.servico-card canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: none;
+    z-index: 0;
+}
+
+/* === TIPOGRAFIA AJUSTADA === */
+
+.servico-top {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7b4a2a;
+    margin-bottom: 20px;
+}
+
+/* TÍTULO 60px COMO PEDIU */
+.servico-titulo {
+    font-size: 60px;
+    line-height: 1;
+    color: #7b4a2a;
+    margin-bottom: 25px;
+    font-family: 'Pangolin', cursive;
+}
+
+.servico-desc {
+    font-size: 18px;
+    color: #7b4a2a;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-family: 'Pangolin', cursive;
+}
+
+/* Botão maior e integrado */
+.servico-btn {
+    background: #c57a2a;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: 30px;
+    text-align: center;
+    width: 100%;           /* integração visual com o card */
+    display: block;
+    margin-top: auto;      /* gruda o botão na parte de baixo */
+    transition: 0.2s;
+}
+
+.servico-btn:hover {
+    background: #8a541d;
+}
+
+.servico-center {
+    max-width: 420px;
+    text-align: center;
+    font-size: 28px;
+    color: #6b4a33;
+    line-height: 1.5;
+    font-family: 'Pangolin', cursive;
+
+    /* NOVOS AJUSTES PARA CENTRALIZAÇÃO REAL */
+    display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    padding: 0 10px;
 }
 
-.card {
-    width: 300px;
-    padding: 20px;
-    background: var(--cor-secundaria);
-    border-radius: 15px;
-    transition: transform 0.3s;
+/* ==============================
+   BORDA DESENHADA ANIMADA
+============================== */
+.servico-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    
+    border: 3px solid #c57a2a;
+    border-radius: inherit;
+
+    opacity: 0;
+
+    /* ESSENCIAL: respeita o border-radius na máscara */
+    clip-path: inset(0 100% 0 0 round 14px);
+
+    transform: scale(0.9);
+
+    transition:
+        clip-path 1.2s ease,
+        opacity .4s ease,
+        transform .4s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* QUANDO O CARD ENTRA NA TELA */
+.servico-card.animar::before {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 14px);
+    transform: scale(1);
 }
 
-.img-space {
-    height: 180px;
-    background: #ccc;
-    border-radius: 10px;
-    margin-bottom: 15px;
+/* Responsivo */
+@media (max-width: 900px) {
+    .servicos-landing {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servico-center {
+        width: 100%;
+        max-width: 400px;
+        margin: 20px 0;
+    }
 }
+
 
 /* ================================
    SEÇÃO 4 - PORTFÓLIO
