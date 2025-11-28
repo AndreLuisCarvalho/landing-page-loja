@@ -150,3 +150,4 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 cards.forEach(card => obs.observe(card));
+
