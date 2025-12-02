@@ -95,31 +95,10 @@ index.html
 
 O site já funciona localmente, sem necessidade de servidor.
 
-🔗 Links das Redes (Footer)
-
-Os ícones usados no footer são botões clicáveis e podem ser configurados assim:
-
-<div class="social-icons">
-  <a href="https://instagram.com/seuperfil" target="_blank">
-    <img src="Dados/SITE/icon-instagram.svg">
-  </a>
-  <a href="https://tiktok.com/@seuperfil" target="_blank">
-    <img src="Dados/SITE/icon-tiktok.svg">
-  </a>
-  <a href="https://youtube.com/seuperfil" target="_blank">
-    <img src="Dados/SITE/icon-play.svg">
-  </a>
-</div>
-
 👤 Autor
 
 André Luis Carvalho
 Desenvolvedor responsável pela implementação e estruturação da página.
-
-Se quiser personalizar sua assinatura:
-
-“Criado com carinho, criatividade e um pouquinho de café!”
-— André
 
 📝 Licença
 

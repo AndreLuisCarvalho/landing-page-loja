@@ -26,6 +26,76 @@ body {
 }
 
 /* ================================
+   SEÇÃO 0 - mobile
+================================= */
+
+.container {
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .sr-container,
+    .gr-container,
+    .servicos-landing {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: clamp(28px, 5vw, 60px);
+}
+
+p {
+  font-size: clamp(14px, 3.5vw, 18px);
+}
+
+.btn, .servico-btn, .gr-btn, .rodape-btn {
+  width: 100%;
+  max-width: 340px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    width: 90%;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-middle::before {
+    display: none; /* remove o traço no mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .film-container {
+    height: 55px;
+  }
+  .film-track img {
+    height: 45px;
+  }
+  .film-track {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .servico-card {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+
+/* ================================
    SEÇÃO 1 - HERO
 ================================= */
 .hero {
